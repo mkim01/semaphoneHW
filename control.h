@@ -22,7 +22,7 @@ union semun {
   unsigned short  *array;
   struct seminfo  *__buf;
 };
-int create_semaphore();
-int remove_semaphore();
-int control(char * option);
-int view();
+void create_semaphore();
+void remove_semaphore();
+void control(char * option);
+void view();

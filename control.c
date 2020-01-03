@@ -1,12 +1,13 @@
 #include "control.h"
 
-int control(char * option){ //command string
+void control(char * option){ //command string
   if (!strcmp(option, "-c")) create_semaphore();
   else if (!strcmp(option, "-v")) view();
   else if (!strcmp(option, "-r")) remove_semaphore();
+  else {printf("The command doesn't support\n");}
 }
 
-int create_semaphore(){
+void create_semaphore(){
 
   //semaphore
   int semd;
@@ -38,7 +39,7 @@ int create_semaphore(){
   printf("file created\n");
 }
 
-int remove_semaphore(){
+void remove_semaphore(){
   printf("Removing Mode Enabled:\n");
 
   int semd = semget(KEY, 1, 0);
@@ -52,7 +53,7 @@ int remove_semaphore(){
   printf("File removed.\n");
 }
 
-int view(){
+void view(){
   printf("The story so far: \n");
   f = fopen(filename, "r");
   char line[SEG_SIZE];
