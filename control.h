@@ -1,15 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 #include <unistd.h>
-
+#include <string.h>
 #include <sys/ipc.h>
 #include <sys/sem.h>
 #include <sys/shm.h>
 #include <sys/types.h>
-#include <sys/stat.h>
-
 #include <fcntl.h>
+#include <sys/types.h>
+#include <sys/stat.h>
 #include <errno.h>
 
 #define KEY 24602
@@ -27,4 +26,3 @@ int create_semaphore();
 int remove_semaphore();
 int control(char * option);
 int view();
-char ** parse_args(char *line, char * sep);
